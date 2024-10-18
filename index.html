@@ -66,6 +66,7 @@ margin-right: 50px;
 }
 
 
+
 	</style>
 </head>
 
@@ -94,6 +95,13 @@ margin-right: 50px;
 	<!-- Form encrypted as text -->
 	<form id ="form-print" enctype="text/plain" class="form-control" style="padding: 50px;">
 		<table>
+			<tr style="height: 60px;">
+				<td><label for="slno"> <strong>Sl Number: </strong></label></td>
+				<td><input class="form-control" type="text"	id="slno" name="slno" placeholder="Enter Sl Number" value=""></td>
+				<td></td>
+				<td></td> 
+				<td></td>
+			</tr>
 			<tr style="height: 60px;">
 				<td><label for="tcno"> <strong>TC Number: </strong></label></td>
 				<td><input class="form-control" type="text"	id="tcno" name="tcno" placeholder="Enter TC Number" value=""></td>
@@ -244,19 +252,15 @@ margin-right: 50px;
 					<option value="-">-</option>
 				</td>
 			</tr>
-			<tr class="rowdesign">
-				<td><label for="name"> <strong>Whether all dues to the college have been cleared: </strong></label></td>
-				<td colspan="3"><select class="form-control" type="text"	id="dues" name="dues" placeholder="select">
-					<option value="">--Select--</option>
-					<option value="YES">YES</option>
-					<option value="NO">NO</option>
-					<option value="-">-</option>
-				</td>
-			</tr>
+			
 			
 			<tr class="rowdesign">
 				<td><label for="name"> <strong>Date of application for Transfer Certificate: </strong></label></td>
 				<td colspan="3"><input class="form-control" type="date"	id="appli_date" name="appli_date" placeholder=""></td>
+			</tr>
+			<tr class="rowdesign">
+				<td><label for=""> <strong>Date of issue of TC: </strong></label></td>
+				<td colspan="3"><input class="form-control" type="date"	id="issue_date" name="issue_date" placeholder=""></td>
 			</tr>
 			<tr class="rowdesign">
 				<td><label for="name"> <strong>Student's Conduct and Character: </strong></label></td>
@@ -286,6 +290,7 @@ margin-right: 50px;
 	<script>		
 		function GeneratePdf() {
 	// Get user data
+	const slno = document.getElementById('slno').value;
 	const tcno = document.getElementById('tcno').value;
 	const tcdate = formatDateToDdMmYyyy(new Date(document.getElementById('tcdate').value));
 	const name = document.getElementById('name').value;
@@ -303,7 +308,7 @@ margin-right: 50px;
 	const month_year = document.getElementById('month_year').value;
 	const promotion = document.getElementById('promotion').value;
 	const regno = document.getElementById('regno').value;
-	const dues = document.getElementById('dues').value;
+	const issue_date = formatDateToDdMmYyyy(new Date(document.getElementById('issue_date').value));
 	
 	const appli_date = formatDateToDdMmYyyy(new Date(document.getElementById('appli_date').value));
 	const stcharacter = document.getElementById('stcharacter').value;
@@ -330,97 +335,114 @@ margin-right: 50px;
 			
 			<hr style="height: 2px; color: black;">
 			<br>
-			<h2><u>TRANSFER & CONDUCT CERTIFICATE</u></h2>
+			<h3><u>TRANSFER & CONDUCT CERTIFICATE</u></h3>
 			<br>
 			</div>
 			</div>
 	
 	<div style="padding-left: 50px" ;>
 		
-		
+	<p>	<strong>SL Number: ${slno}</strong></p>
 	<p><strong>T C Number: ${tcno}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date : ${tcdate}</strong></p>
 		
 		
 		
 	<table class="tablestyle">
 	<tr class="tablestyle">
+		<td>&nbsp;&nbsp;1&nbsp;</td>
 		<td class="tablestyle"><strong>Name of the student</strong></td>
 		
 		<td class="tablestyle"><strong><span class="uppercase">${name} </span></strong></td>
 	</tr>
 	<tr class="tablestyle">
+		<td>&nbsp;&nbsp;2&nbsp;</td>
 		<td class="tablestyle"><strong>Date of Birth</strong> </td>
 		
 		<td class="tablestyle"><strong> ${dobdate}</strong> </td>
 	</tr>
 	<tr class="tablestyle">
+		<td>&nbsp;&nbsp;3&nbsp;</td>
 		<td class="tablestyle"><strong>Date of Birth (in words)</strong></td>
 		
 		<td class="tablestyle"><strong><span class="uppercase"> ${dobwords}</span></strong> </td>
 	</tr>
 	<tr class="tablestyle">
+		<td>&nbsp;&nbsp;4&nbsp;</td>
 		<td class="tablestyle"><strong>Course</strong> </td>
 		
 		<td class="tablestyle"><strong> ${course}${honours}</strong> </td>
 	</tr>
 	<tr class="tablestyle">
+		<td>&nbsp;&nbsp;5&nbsp;</td>
 		<td class="tablestyle"><strong>Admission Date</strong> </td>
 		
 		<td class="tablestyle"><strong> ${admission_date}</strong> </td>
 	</tr>
 	<tr class="tablestyle">
+		<td>&nbsp;&nbsp;6&nbsp;</td>
 		<td class="tablestyle"><strong>Admission Number</strong> </td>
 		
 		<td class="tablestyle"><strong> ${admn_No}</strong> </td>
 	</tr>
 	<tr class="tablestyle">
+		<td>&nbsp;&nbsp;7&nbsp;</td>
 		<td class="tablestyle"><strong>Leaving Date</strong> </td>
 		
 		<td class="tablestyle"><strong> ${leaving_date}</strong> </td>
 	</tr>
 	<tr class="tablestyle">
+		<td>&nbsp;&nbsp;8&nbsp;</td>
 		<td class="tablestyle"><strong>Enrolled Semester</strong> </td>
 		
 		<td class="tablestyle"><strong> ${from_sem}</strong> </td>
 	</tr>
 	<tr class="tablestyle">
+		<td>&nbsp;&nbsp;9&nbsp;</td>
 		<td class="tablestyle"><strong>Leaving Semester</strong> </td>
 		
 		<td class="tablestyle"><strong> ${to_sem}</strong> </td>
 	</tr>
 	<tr class="tablestyle">
+		<td>&nbsp;10&nbsp;</td>
 		<td class="tablestyle"><strong>Reason for leaving</strong> </td>
 		
 		<td class="tablestyle"><strong><span class="uppercase"> ${reason}</span></strong> </td>
 	</tr>
 	
 	<tr class="tablestyle">
+		<td>&nbsp;11&nbsp;</td>
 		<td class="tablestyle"><strong>Last Examination appeared</strong> </td>
 	
 		<td class="tablestyle"><strong><span class="uppercase"> ${exam_appeared} ${month_year}</span></strong> </td>
 	</tr>
 	<tr class="tablestyle">
+		<td>&nbsp;12&nbsp;</td>
 		<td class="tablestyle"><strong>Register Number</strong> </td>
 		
 		<td class="tablestyle"><strong><span class="uppercase"> ${regno}</span></strong> </td>
 	</tr>
 	<tr class="tablestyle">
+		<td>&nbsp;13&nbsp;</td>
 		<td class="tablestyle"><strong>Whether qualified for promotion</strong> </td>
 		
 		<td class="tablestyle"><strong> ${promotion}</strong> </td>
 	</tr>
-	<tr class="tablestyle">
-		<td class="tablestyle"><strong>Whether all dues to the college<br>have been cleared</strong> </td>
-		
-		<td class="tablestyle"><strong> ${dues}</strong> </td>
-	</tr>
+	
 	
 	<tr class="tablestyle">
+		<td>&nbsp;14&nbsp;</td>
 		<td class="tablestyle"><strong>Date of application for Transfer Certificate</strong> </td>
 	
 		<td class="tablestyle"><strong> ${appli_date}</strong> </td>
 	</tr>
 	<tr class="tablestyle">
+		<td>&nbsp;15&nbsp;</td>
+		<td class="tablestyle"><strong>Date of issue of TC</strong> </td>
+		
+		<td class="tablestyle"><strong> ${issue_date}</strong> </td>
+	</tr>
+	<tr class="tablestyle">
+		<td>&nbsp;16&nbsp;</td>
 		<td class="tablestyle"><strong>Student's Conduct and Character</strong> </td>
 		
 		<td class="tablestyle"><strong><span class="uppercase"> ${stcharacter}</span></strong> </td>
