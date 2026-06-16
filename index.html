@@ -64,40 +64,147 @@ padding-left: 5px;
 padding-right: 3px;
 margin-right: 50px;
 }
+ .useful-links-box{
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 200px;
+    background: white;
+    border: 2px solid #550649;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    z-index: 9999;
+    overflow: hidden;
+}
 
+.useful-links-header{
+    background: #2226fa;
+    color: white;
+    border-radius: 3px;
+    padding: 6px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+}
 
+.useful-links-body{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
 
+.useful-link-btn{
+    display: block;
+    text-decoration: none;
+    background: #087931;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.useful-link-btn:hover{
+    background: #05491f;
+}
+.button-3 {
+  appearance: none;
+  background-color: #1b592c;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 15px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.button-3:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+.button-3:hover {
+  background-color: #2c974b;
+}
+
+.button-3:focus {
+  box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+  outline: none;
+}
+
+.button-3:disabled {
+  background-color: #94d3a2;
+  border-color: rgba(27, 31, 35, .1);
+  color: rgba(255, 255, 255, .8);
+  cursor: default;
+}
+
+.button-3:active {
+  background-color: #298e46;
+  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+		
 	</style>
 </head>
 
 <body style="margin-top: 25px;">
 	
+
+	
+
 	<div id="pdf-content">
-	<div class="container"  >
-		<h4 style="color: crimson; text-align: right;">Customer Care Support(WhatsApp) : 9544077151 </h4>
+	<div class="container" style="background-color: rgb(49, 14, 137); border-radius: 31px; margin-bottom: 40px;padding-bottom: 20px;"  >
+
+<div style="padding-top: 15px;"> 
+				<div style="color: rgb(248, 250, 247); font-weight: 500; padding-left: 50px; "  > Quick Links>>>
+				
+				<a href="https://skyssoft.github.io/SampleSeatingArrangement/"><input type="button" class="button-3" value="Exam Seating Arrangement";> </a>
+				<a href="https://skyssoft.github.io/voucherPrint/samplevoucher"><input type="button" class="button-3" value="Voucher Print";></a>
+				<span style="color: rgb(255, 255, 255); text-align: right; font-size: 25 px;">Contact: 9526455151 </span>
+				</div>
+			</div>
+
+
+
+		
 		<div style="width: 200px; position: absolute; padding-top: 30px; padding-left: 40px; ">
 		<img src="malabarlogo.jpeg" class="imagestyle">
 		</div>
 		<div>
 			
 		<div style="padding-left: 160px; padding-right: 200px;">
-		<h3 class="heading" style="padding-top: 25px;">
-			MALABAR ARTS ANDSCIENCE COLLEGE FOR WOMEN - CHEKKIAD
+		<h3 class="heading" style="padding-top: 25px; color: #ffffff;">
+			MALABAR ARTS AND SCIENCE COLLEGE FOR WOMEN, CHEKKIAD
 				</h3>
 				
-	<h2 class="heading" style="padding-top: 5px; padding-bottom: 25px; font-size: 30px;">
-	Transfer & Conduct Certificate
+	<h2 class="heading" style="padding-top: 5px; padding-bottom: 25px; font-size: 30px; color: #ffd902;">Transfer & Conduct Certificate
+	<h5 style="color: red; text-align: center; ">  Please verify before generate TC &#9989;</h4>
 	</h2>
 	
 </div>
-	<h4 style="color: red; text-align:center;"> Please verify before generate TC </h4>
-
+	
 	<!-- Form encrypted as text -->
 	<form id ="form-print" enctype="text/plain" class="form-control" style="padding: 50px;">
 		<table>
 			<tr style="height: 60px;">
-				<td><label for="slno"> <strong>SL Number: </strong></label></td>
-				<td><input class="form-control" type="text"	id="slno" name="slno" placeholder="Enter SL Number" value=""></td>
+				<td><label for="slno"> <strong>Sl Number: </strong></label></td>
+				<td><input class="form-control" type="text"	id="slno" name="slno" placeholder="Enter Sl Number" value=""></td>
 				<td></td>
 				<td></td> 
 				<td></td>
@@ -456,7 +563,8 @@ margin-right: 50px;
 <br>
 Office seal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h5 style="text-align:right">Principal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
 	
-	`;
+	`
+	alert("Press Ctrl+P to Print or Save PDF");;
 
 	// Display the content in the PDF section
 	document.getElementById('pdf-content').innerHTML = pdfContent;
